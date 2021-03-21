@@ -1,0 +1,13 @@
+source leaprc.protein.ff14SB
+source leaprc.phosaa10
+source leaprc.water.spce
+loadamberprep atp.prep
+loadamberparams atp.frcmod
+loadoff po3.off
+loadamberparams po3.frcmod
+mol = loadpdb smad1_alk2_fixed.pdb 
+solvatebox mol SPCBOX 12
+addions mol Na+ 0 
+savepdb mol alk2smad1_solv.pdb
+saveamberparm mol alk2smad1.prmtop alk2smad1.inpcrd
+quit
